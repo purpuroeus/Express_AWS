@@ -10,7 +10,7 @@ console.log('1988년도 개봉 영화 쿼리 요청중...');
 
 var params = {
     TableName : 'Movies',
-    KeyConditionExpression : '#yr = :yyyy',     // 키를 이용한 검색 조건. #yr이 yyyy와 일치하는 것만 가져옴
+    KeyConditionExpression : '#yr = :yyyy',     // 키를 이용한 검색 조건. #yr이 yyyy와 일치하는 것만 가져옴 + year은 dynamoDB의 예약어 이기 떄문에 충돌을 회피
     ExpressionAttributeNames : {                // 표현식의 속성명을 지정하는 부분. #yr은 Movies 칼럼의 year을 의미
         '#yr' : 'year'
     },
